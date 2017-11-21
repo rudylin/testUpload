@@ -1,0 +1,313 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: none;
+}
+.clearfix{
+    display: block;
+    content: '';
+    clear: both;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.east_head{
+    font-family: Microsoft JhengHei;
+    width: 100%;
+    height: 36px;
+    background-color: rgba(33, 18, 25,1);
+    position: fixed;
+    line-height: 30px;
+    padding-top: 5px;
+    padding-left: 2%;
+    padding-right: 2%;
+    box-sizing: border-box;
+    z-index: 10;
+}
+.city_member_name{
+    color:rgb(237, 126, 38);
+    margin-right: 10px;
+}
+.city_reflesh_money{
+    margin-right: 10px;
+}
+.wrap_memberInfo{
+    float: right;
+    color:#fff;
+}
+.wrap_memberInfo > *{
+    float: left;
+}
+.money_reload{
+    width: 29px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.money_reload img{
+    width: 100%;
+}
+.tradRecord,.betRecord{
+    border:1px solid rgb(157, 134, 80);
+    color:rgb(157, 134, 80);
+    margin-right: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    padding: 0 16px;
+    height: 28px;
+    line-height: 25px;
+    cursor: pointer;
+}
+.wrapSlider{
+    width: 100%;
+    height: 350px;
+    background-color: rgb(6, 5, 19);
+}
+.city_body{
+    width: 100%;
+    height: 100%;
+    background-image: url("./cut/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /*overflow: hidden;*/
+}
+main{
+    font-family: Microsoft JhengHei;
+    height: 100%;
+}
+.city_main{
+    position: relative;
+    /*width: 50%;*/
+    width: 953px;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(0,0,0,0.75);
+    /*background: -webkit-linear-gradient(right top,rgb(59, 17, 27),rgb(19, 5, 18));
+    background: -o-linear-gradient(bottom left,rgb(59, 17, 27),rgb(19, 5, 18));
+    background: -moz-linear-gradient(bottom left,rgb(59, 17, 27),rgb(19, 5, 18));
+    background: linear-gradient(to bottom left,rgb(59, 17, 27),rgb(19, 5, 18));*/
+    /*background-image: -webkit-radial-gradient(ellipse at top right, rgb(59, 17, 27),rgb(3,2,8)); background-image: radial-gradient(ellipse at top right, rgb(59,17,27),rgb(3,2,8));
+    background-image: radial-gradient(ellipse at top right, rgb(59, 17, 27),rgb(3,2,8)); background-image: radial-gradient(ellipse at top right, rgb(59,17,27),rgb(3,2,8));*/
+}
+.city_news{
+    background-image: url("./cut/bg_marquee.png");
+    height: 40px;
+}
+.news_pic img{
+    z-index: 2;
+    position: absolute;
+}
+.city_news marquee{
+    position: absolute;
+    top: 10px;
+    color:#fff;
+}
+.city_news,.runHorse{
+    width: 100%;
+}
+.city_ticket_spec{
+    position: relative;
+    box-sizing: border-box;
+    padding: 2%;
+}
+.city_ticket_title{
+    padding-left: 30px;
+}
+
+.city_ticket_bg img{
+    position: absolute;
+    width: 97%;
+}
+/*.wrap_ticket_inner{
+    position: absolute;
+    top: 69px;
+}*/
+.city_ticket_inner{
+    width: 20%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1%;
+    float: left;
+    position: relative;
+}
+.ticket_inside{
+    background-image: url("./cut/bg_game_icon.png");
+    background-size: contain;
+    background-repeat: round;
+    box-sizing: border-box;
+    padding: 8%;
+}
+.inside_pic{
+    cursor: pointer;
+    width: 100%;
+}
+.inside_pic img{
+    width: 100%;
+}
+.inside_title {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color:#fff;
+    float: left;
+}
+.inside_title h2{
+    font-size: 1em;
+}
+.inside_heart{
+    width: 24px;
+    height: 22px;
+    cursor: pointer;
+    margin-left: 5px;
+    float: left;
+    background-image: url("./cut/heart_default.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+.inside_heart:hover{
+    background-image: url("./cut/heart_hover.png");
+}
+.inside_heart_toggle{
+    background-image: url("./cut/heart_selected.png");
+}
+.inside_new{
+    left: 3px;
+    top: 5px;
+}
+.inside_hot{
+    right: 0px;
+    top: 0px;
+}
+.inside_new,.inside_hot{
+    position: absolute;
+    width: 50px;
+}
+.inside_new img,.inside_hot img{
+    width: 100%;
+}
+
+.city_footer{
+    width: 100%;
+    height: 90px;
+    background-color: black;
+    text-align: center;
+    color:rgb(214, 182, 103);
+    line-height: 90px;
+}
+.city_sideBox{
+    position: fixed;
+    top: 411px;
+    left: 1428px;
+}
+.city_sideBox li{
+    font-family: Microsoft JhengHei;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    background-image: url("./cut/bg_right_tab.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 50px;
+    color:#fff;
+}
+.city_service{
+    font-family: Microsoft JhengHei;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    color:#fff;
+    position: fixed;
+    border: none;
+    top: 93%;
+    left: 22%;
+    cursor: pointer;
+    background: -webkit-linear-gradient(top bottom,rgb(255, 109, 61),rgb(247, 72, 54));
+    background: -o-linear-gradient(bottom left,rgb(255, 109, 61),rgb(247, 72, 54));
+    background: -moz-linear-gradient(bottom left,rgb(255, 109, 61),rgb(247, 72, 54));
+    background: linear-gradient(to bottom left,rgb(255, 109, 61),rgb(247, 72, 54));
+}
+/*slider*/
+.custom-navigation{
+    position: relative;
+    z-index: 2;
+}
+.lArr,.rArr{
+    position: absolute;
+    top: 310px;
+    z-index: 3;
+}
+.lArr{
+    /*left: 475px;*/
+    left: 0%;
+}
+.rArr{
+    /*left: 1381px;*/
+    right: 0%;
+}
+.control_text{
+    pointer-events: none;
+    position: absolute;
+    /*width: 50%;*/
+    width: 953px;
+    top: 320px;
+    color: #fff;
+    z-index: 3;
+}
+.control_text > *{
+    float: left;
+}
+.control_text_inner{
+    font-family: Microsoft JhengHei;
+    text-align: center;
+    top: 0;
+    width: 33.3%;
+}
+
+/*paralax*/
+.parallax-bg1{
+    position: fixed;
+    z-index: 2;
+}
+#bg1-0,#bg1-1,#bg1-2,#bg1-3,#bg1-4,#bg1-5{
+    position: absolute;
+}
+#bg1-0{
+    z-index: -1;
+    top: 10%;
+    left: 76%;
+}
+#bg1-1{
+    top: 55%;
+    left: 10%;
+}
+#bg1-2{
+    top: 90%;
+    left: 86%;
+}
+#bg1-3{
+    top: 130%;
+    left: 18%;
+}
+#bg1-4{
+    top: 200%;
+    left: 74%;
+    z-index: -1;
+}
+#bg1-5{
+    top: 290%;
+    left: 0%;
+}
+#bg1-6{
+    top: 360%;
+    left: 79%;
+}

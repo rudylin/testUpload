@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+    li,
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    i {
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    li,
+    ul {
+        list-style: none;
+    }
+    
+    a {
+        text-decoration: none;
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: none;
+    }
+    
+    a:link {
+        color: #333;
+    }
+    
+    a:focus,
+    a:hover {
+        color: #f44a07;
+    }
+    
+    a:visited {
+        color: #333;
+    }
+    
+    ul li {
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        display: inline-block;
+        /* float: left; */
+        margin-right: 25px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    
+    ul li a {
+        color: #444;
+    }
+    
+    ul li a:hover {
+        color: #f9982e;
+    }
+    
+    ul .kaijiltit {
+        font-size: 18px;
+        margin-right: 21px;
+        padding: 0;
+        border: 1px solid transparent;
+    }
+    
+    ul .selected {
+        border: 1px solid #f4831e;
+        color: #f4831e;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        position: relative;
+    }
+    
+    ul .selected i {
+        position: absolute;
+        top: 15px;
+        right: 0;
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        background: url(http://1680210.com/img/icon/bjpknum.png?v=20171019951) no-repeat -386px -55px;
+    }
+    
+    ul .selected a {
+        color: #f4831e;
+    }
+    
+    div {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    .jrsmtj {
+        width: 100%;
+        padding: 0 20px 20px;
+        border-bottom: 2px solid #e7e7e7;
+        display: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    
+    .jrsmtj .headtxt {
+        width: 100%;
+        height: 56px;
+        line-height: 56px;
+        font-size: 16px;
+    }
+    
+    .jrsmtj .secondtb {
+        margin-top: 20px;
+    }
+    
+    .jrsmtj table {
+        background: #e6e6e6;
+        width: 100%;
+    }
+    
+    .jrsmtj table tr td,
+    .jrsmtj table tr th {
+        height: 45px;
+        text-align: center;
+    }
+    
+    .jrsmtj table tr th {
+        font-size: 16px;
+        background: #f5f5f5;
+    }
+    
+    .jrsmtj table tr td {
+        background: #fff;
+        color: #666;
+    }
+    /*! CSS Used from: http://1680210.com/css/user_adv.css?v=20171019951 */
+    
+    div {
+        padding: 0;
+        margin: 0;
+    }
+    
+    div ul {
+        float: left;
+    }
+    
+    div ul li {
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        display: inline-block;
+        float: left;
+        margin-right: 25px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    
+    .cltx {
+        width: 100%;
+        padding: 0 20px 20px;
+        border-bottom: 2px solid #e7e7e7;
+        display: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    
+    .cltx .headtxt {
+        width: 100%;
+        height: 56px;
+        line-height: 56px;
+        font-size: 16px;
+    }
+    
+    .cltx .cltxul {
+        height: auto;
+        width: 100%;
+    }
+    
+    .cltx .cltxul ul li {
+        display: inline-block;
+        float: left;
+        width: 168px;
+        height: 36px;
+        padding: 0;
+        line-height: 36px;
+        margin-right: 20px;
+        margin-top: 10px;
+        text-align: center;
+        border-radius: 0;
+        -moz-border-radius: 0;
+        -webkit-border-radius: 0;
+    }
+    
+    div {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    
+    div ul {
+        float: left;
+    }
+    
+    div ul li {
+        width: auto;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 10px;
+        display: inline-block;
+        float: left;
+        margin-right: 25px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+    }
+    
+    div ul li a {
+        color: #444;
+    }
+    
+    div ul li a:hover {
+        color: #f9982e;
+    }
+    
+    div ul .reset {
+        border: none;
+        height: 32px;
+    }
+    
+    div ul .kaijiltit {
+        font-size: 18px;
+        margin-right: 21px;
+        padding: 0;
+        border: 1px solid transparent;
+    }
+    
+    .head {
+        padding: 10px 20px;
+        box-sizing: border-box;
+    }
+    
+    .hmfb {
+        width: 100%;
+        padding: 0 20px 20px;
+        border-bottom: 2px solid #e7e7e7;
+        display: none;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+    }
+    
+    .hmfb .kaijiltit {
+        font-size: 16px;
+    }
+    
+    .hmfb .head {
+        min-width: 1170px;
+        padding: 30px 0 0;
+        box-sizing: border-box;
+    }
+    
+    .hmfb .head2 {
+        padding-top: 20px;
+    }
+</style>
+
+<body>
+    <ul class="zoushimap" id="kaijiangjl" style="display:block;">
+        <li class="kaijiltit">开奖记录</li>
+        <li id="jrsmtj" class="">
+            <a href="javascript:">今日双面/号码统计</a>
+            <i></i>
+        </li>
+        <li id="cltx" class="">
+            <a href="javascript:"> 长龙提醒</a>
+            <i></i>
+        </li>
+        <li id="hmfb" class="">
+            <a href="javascript:">号码分布</a>
+            <i></i>
+        </li>
+    </ul>
+    <div class="jrsmtj">
+        <div class="headtxt">
+            今日双面统计
+        </div>
+        <table cellpadding="1" cellspacing="1" border="0">
+            <tbody>
+                <tr>
+                    <th>名次</th>
+                    <th colspan="4">冠军</th>
+                    <th colspan="4">亚军</th>
+                    <th colspan="4">第三名</th>
+                    <th colspan="4">第四名</th>
+                    <th colspan="4">第五名</th>
+                    <th colspan="4">第六名</th>
+                    <th colspan="4">第七名</th>
+                    <th colspan="4">第八名</th>
+                    <th colspan="4">第九名</th>
+                    <th colspan="4">第十名</th>
+                </tr>
+                <tr>
+                    <td>单双大小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                </tr>
+                <tr id="shuanmiandata">
+                    <td>出现次数</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>6</td>
+                    <td>14</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>14</td>
+                    <td>6</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>9</td>
+                    <td>11</td>
+                    <td>10</td>
+                    <td>10</td>
+                    <td>14</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="secondtb" cellpadding="1" cellspacing="1" border="0">
+            <tbody>
+                <tr>
+                    <th>冠亚龙虎</th>
+                    <th colspan="4">冠亚和</th>
+                    <th colspan="2">第一名龙虎</th>
+                    <th colspan="2">第二名龙虎</th>
+                    <th colspan="2">第三名龙虎</th>
+                    <th colspan="2">第四名龙虎</th>
+                    <th colspan="2">第五名龙虎</th>
+                </tr>
+                <tr>
+                    <td>单双大小龙虎</td>
+                    <td>单</td>
+                    <td>双</td>
+                    <td>大</td>
+                    <td>小</td>
+                    <td>龙</td>
+                    <td>虎</td>
+                    <td>龙</td>
+                    <td>虎</td>
+                    <td>龙</td>
+                    <td>虎</td>
+                    <td>龙</td>
+                    <td>虎</td>
+                    <td>龙</td>
+                    <td>虎</td>
+                </tr>
+                <tr id="gylhcs">
+                    <td>出现次数</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>6</td>
+                    <td>14</td>
+                    <td>6</td>
+                    <td>14</td>
+                    <td>8</td>
+                    <td>12</td>
+                    <td>12</td>
+                    <td>8</td>
+                    <td>13</td>
+                    <td>7</td>
+                    <td>11</td>
+                    <td>9</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="cltx">
+        <div class="headtxt">
+            长龙连开提醒
+        </div>
+        <div class="cltxul">
+            <ul id="cltxul">
+                <li><span>冠亚和</span>：&nbsp;&nbsp;<span>小</span>&nbsp;&nbsp;<span style="color:#f11821">7&nbsp;&nbsp;</span>期</li>
+                <li><span>亚军</span>：&nbsp;&nbsp;<span>虎</span>&nbsp;&nbsp;<span style="color:#f11821">5&nbsp;&nbsp;</span>期</li>
+                <li><span>亚军</span>：&nbsp;&nbsp;<span>小</span>&nbsp;&nbsp;<span>4&nbsp;&nbsp;</span>期</li>
+                <li>第<span>五</span>名：&nbsp;&nbsp;<span>双</span>&nbsp;&nbsp;<span>4&nbsp;&nbsp;</span>期</li>
+                <li>第<span>八</span>名：&nbsp;&nbsp;<span>单</span>&nbsp;&nbsp;<span>4&nbsp;&nbsp;</span>期</li>
+                <li>第<span>十</span>名：&nbsp;&nbsp;<span>大</span>&nbsp;&nbsp;<span>4&nbsp;&nbsp;</span>期</li>
+                <li>第<span>七</span>名：&nbsp;&nbsp;<span>双</span>&nbsp;&nbsp;<span>3&nbsp;&nbsp;</span>期</li>
+                <li><span>冠军</span>：&nbsp;&nbsp;<span>单</span>&nbsp;&nbsp;<span>2&nbsp;&nbsp;</span>期</li>
+                <li>第<span>三</span>名：&nbsp;&nbsp;<span>双</span>&nbsp;&nbsp;<span>2&nbsp;&nbsp;</span>期</li>
+                <li>第<span>四</span>名：&nbsp;&nbsp;<span>单</span>&nbsp;&nbsp;<span>2&nbsp;&nbsp;</span>期</li>
+                <li>第<span>五</span>名：&nbsp;&nbsp;<span>龙</span>&nbsp;&nbsp;<span>2&nbsp;&nbsp;</span>期</li>
+            </ul>
+        </div>
+    </div>
+    <div class="hmfb">
+        <div class="head">
+            <ul class="zoushimap" id="chakanchfb">
+                <li class="kaijiltit">查看车号分布：</li>
+                <li class="01">
+                    <a href="javascript:">号码1</a>
+                    <i></i>
+                </li>
+                <li class="02">
+                    <a href="javascript:">号码2</a>
+                    <i></i>
+                </li>
+                <li class="03">
+                    <a href="javascript:">号码3</a>
+                    <i></i>
+                </li>
+                <li class="04">
+                    <a href="javascript:">号码4</a>
+                    <i></i>
+                </li>
+                <li class="05">
+                    <a href="javascript:">号码5</a>
+                    <i></i>
+                </li>
+                <li class="06">
+                    <a href="javascript:">号码6</a>
+                    <i></i>
+                </li>
+                <li class="07">
+                    <a href="javascript:">号码7</a>
+                    <i></i>
+                </li>
+                <li class="08">
+                    <a href="javascript:">号码8</a>
+                    <i></i>
+                </li>
+                <li class="09">
+                    <a href="javascript:">号码9</a>
+                    <i></i>
+                </li>
+                <li class="10">
+                    <a href="javascript:">号码10</a>
+                    <i></i>
+                </li>
+                <!--<li class="reset">
+                        还原
+                    </li>-->
+            </ul>
+        </div>
+        <div class="head head2">
+            <ul class="zoushimap" id="daxiaodsfb">
+                <li class="kaijiltit">大小单双分布：</li>
+                <li id="dannum">
+                    <a href="javascript:">单</a>
+                    <i></i>
+                </li>
+                <li id="shuangnum">
+                    <a href="javascript:">双</a>
+                    <i></i>
+                </li>
+                <li id="danum">
+                    <a href="javascript:">大</a>
+                    <i></i>
+                </li>
+                <li id="xiaonum">
+                    <a href="javascript:">小</a>
+                    <i></i>
+                </li>
+                <li id="duizinum">
+                    <a href="javascript:">对子号</a>
+                    <i></i>
+                </li>
+                <li class="reset">
+                    还原
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    $(function() {
+        $("#jrsmtj").click(function() {
+            if ($(this).hasClass("selected")) {
+                $(this).removeClass("selected");
+                $(".jrsmtj").animate({
+                    width: '50%',
+                    opacity: 0,
+                    display: 'none'
+                });
+            } else {
+                $(this).addClass("selected");
+                $(".jrsmtj").animate({
+                    width: '100%',
+                    opacity: 1,
+                    display: 'block'
+                });
+            }
+
+        });
+        $("#cltx").click(function() {
+            if ($(this).hasClass("selected")) {
+                $(this).removeClass("selected");
+                $(".cltx").animate({
+                    width: '50%',
+                    opacity: 0,
+                    display: 'none'
+                });
+            } else {
+                $(this).addClass("selected");
+                $(".cltx").animate({
+                    width: '100%',
+                    opacity: 1,
+                    display: 'block'
+                });
+            }
+
+        });
+        $("#hmfb").click(function() {
+            if ($(this).hasClass("selected")) {
+                $(this).removeClass("selected");
+                $(".hmfb").animate({
+                    width: '0%',
+                    opacity: 0,
+                    display: 'none'
+                });
+            } else {
+                $(this).addClass("selected");
+                $(".hmfb").animate({
+                    width: '100%',
+                    opacity: 1,
+                    display: 'block'
+                });
+            }
+
+        });
+    });
+</script>
+
+</html>
